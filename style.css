@@ -1,0 +1,59 @@
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  max-width: 600px;
+  margin: 3rem auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+input, textarea, button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+}
+button {
+  background: #007bff;
+  color: white;
+  cursor: pointer;
+}
+button:hover {
+  background: #0056b3;
+}
+.btn {
+  display: inline-block;
+  margin: 1rem;
+  padding: 1rem 2rem;
+  background: #28a745;
+  color: white;
+  text-decoration: none;
+  border-radius: 1rem;
+}
+.btn:hover {
+  background: #218838;
+}
+.back {
+  display: inline-block;
+  margin-top: 1rem;
+  text-decoration: none;
+  color: #007bff;
+}
+#recipes img {
+  max-width: 100%;
+  border-radius: 1rem;
+}
+.recipe-item {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 1rem;
+}

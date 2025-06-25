@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CV Express</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/535/535239.png" />
+</head>
+<body>
+  <div class="container">
+    <h1>📄 Générateur de CV</h1>
+    <form id="cvForm">
+      <input type="text" placeholder="Nom complet" id="nom" required/>
+      <input type="text" placeholder="Poste recherché" id="poste" required/>
+      <textarea placeholder="À propos de moi" id="description" rows="3"></textarea>
+      <textarea placeholder="Expériences (une par ligne)" id="experiences" rows="5"></textarea>
+      <textarea placeholder="Formation (une par ligne)" id="formation" rows="4"></textarea>
+      <textarea placeholder="Compétences techniques" id="competences" rows="3"></textarea>
+      <textarea placeholder="Langues parlées" id="langues" rows="2"></textarea>
+      <button type="submit">📄 Générer le CV</button>
+    </form>
+    <button id="downloadBtn" style="display:none;">⬇️ Télécharger le CV</button>
+    <iframe id="cvFrame" style="width:100%; height:500px; display:none; margin-top:1rem;"></iframe>
+    <a href="index.html" class="back">← Retour à l'accueil</a>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="js/cv.js"></script>
+</body>
+</html>
