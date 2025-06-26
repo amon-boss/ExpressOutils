@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Générateur de CV | ExpressOutils</title>
   <link rel="stylesheet" href="css/style.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/535/535239.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet">
   <style>
     .form-section {
       max-width: 700px;
@@ -71,43 +72,8 @@
 
   <div id="result"></div>
 
-  <script>
-    function genererCV() {
-      const nom = document.getElementById('nom').value;
-      const poste = document.getElementById('poste').value;
-      const desc = document.getElementById('description').value;
-      const exp = document.getElementById('experiences').value;
-      const form = document.getElementById('formations').value;
-      const comp = document.getElementById('competences').value;
-      const lang = document.getElementById('langues').value;
-
-      const html = `
-        <div id="cv">
-          <h1>${nom}</h1>
-          <h3>${poste}</h3>
-          <h2>🗣️ À propos</h2>
-          <p>${desc}</p>
-          <h2>💼 Expériences</h2>
-          <p>${exp.replace(/\n/g, "<br>")}</p>
-          <h2>🎓 Formations</h2>
-          <p>${form.replace(/\n/g, "<br>")}</p>
-          <h2>🛠️ Compétences</h2>
-          <p>${comp}</p>
-          <h2>🌍 Langues</h2>
-          <p>${lang}</p>
-        </div>
-      `;
-      document.getElementById("result").innerHTML = html;
-    }
-
-    function telechargerPDF() {
-      const element = document.getElementById("cv");
-      if (!element) {
-        alert("Génère d'abord le CV avant de télécharger.");
-        return;
-      }
-      html2pdf().from(element).save("MonCV.pdf");
-    }
-  </script>
+  <!-- JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="js/cv.js"></script>
 </body>
 </html>
