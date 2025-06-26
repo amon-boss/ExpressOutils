@@ -1,31 +1,29 @@
+function chercherRecette() {
+  const ingr = document.getElementById("ingredient").value.trim();
+  const result = document.getElementById("resultatRecette");
+  result.innerHTML = "⏳ Recherche en cours...";
+  if (!ingr) {
+    result.innerHTML = "❌ Entrez un ingrédient valide.";
+    return;
+  }
 
-function searchRecipes() {
-  const input = document.getElementById('ingredientInput').value.trim().toLowerCase();
-  const ingredients = input.split(',')[0]; // TheMealDB ne supporte qu'1 ingrédient
-  const recipesDiv = document.getElementById('recipes');
-  recipesDiv.innerHTML = '⏳ Chargement...';
-
-  fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=\${ingredients}`)
+  fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingr}`)
     .then(res => res.json())
     .then(data => {
-      if (!data.meals) {
-        recipesDiv.innerHTML = '<p>Aucune recette trouvée.</p>';
-        return;
+      if (data.meals) {
+        const meal = data.meals[Math.floor(Math.random() * data.meals.length)];
+        result.innerHTML = `
+          <div class="recipe">
+            <img src="${meal.strMealThumb}" alt="plat" />
+            <h3>${meal.strMeal}</h3>
+            <a href="https://www.themealdb.com/meal.php?c=${meal.idMeal}" target="_blank">Voir la recette complète</a>
+          </div>
+        `;
+      } else {
+        result.innerHTML = "😢 Aucune recette trouvée pour cet ingrédient.";
       }
-
-      recipesDiv.innerHTML = '';
-      data.meals.slice(0, 6).forEach(meal => {
-        const div = document.createElement('div');
-        div.className = 'recipe-item';
-        div.innerHTML = \`
-          <h3>\${meal.strMeal}</h3>
-          <img src="\${meal.strMealThumb}" alt="\${meal.strMeal}" />
-          <a href="https://www.themealdb.com/meal/\${meal.idMeal}" target="_blank">Voir la recette</a>
-        \`;
-        recipesDiv.appendChild(div);
-      });
     })
-    .catch(err => {
-      recipesDiv.innerHTML = '<p>Erreur lors de la recherche.</p>';
+    .catch(() => {
+      result.innerHTML = "⚠️ Erreur lors de la recherche.";
     });
 }
