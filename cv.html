@@ -1,56 +1,16 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Générateur de CV | ExpressOutils</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV | ExpressOutils</title>
   <link rel="stylesheet" href="css/style.css" />
-  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/535/535239.png" />
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    .form-section {
-      max-width: 700px;
-      margin: 2rem auto;
-      background: #fff;
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-    .form-section input, .form-section textarea {
-      width: 100%;
-      margin-bottom: 1rem;
-      padding: 0.8rem;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-    }
-    .form-section button {
-      background: #1d3557;
-      color: white;
-      border: none;
-      padding: 0.8rem 1.5rem;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-    .form-section button:hover {
-      background: #457b9d;
-    }
-    #result {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 2rem;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    #result h2 {
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 0.5rem;
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&family=Pacifico&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
-    <div class="logo">🚀 <span>ExpressOutils</span></div>
+    <div class="logo">🚀 ExpressOutils</div>
     <nav>
       <a href="index.html">🏠 Accueil</a>
       <a href="recette.html">🍳 Recettes</a>
@@ -72,7 +32,15 @@
 
   <div id="result"></div>
 
-  <!-- JavaScript -->
+  <footer>
+    <p>© 2025 ExpressOutils | <a href="index.html">Accueil</a> | <a href="cv.html">CV</a> | <a href="recette.html">Recettes</a></p>
+    <div>
+      <button onclick="window.open('https://facebook.com','_blank')">Facebook</button>
+      <button onclick="window.open('https://instagram.com','_blank')">Instagram</button>
+      <button onclick="window.open('https://linkedin.com','_blank')">LinkedIn</button>
+    </div>
+  </footer>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <script src="js/cv.js"></script>
 </body>
