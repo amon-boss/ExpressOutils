@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Recette avec rien | ExpressOutils</title>
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/535/535239.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet">
   <style>
     .form-section {
       max-width: 600px;
@@ -14,7 +16,6 @@
       border-radius: 10px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
-
     .form-section input {
       width: 100%;
       padding: 0.8rem;
@@ -22,7 +23,6 @@
       margin-bottom: 1rem;
       border-radius: 6px;
     }
-
     .form-section button {
       background: #1d3557;
       color: white;
@@ -31,11 +31,9 @@
       border-radius: 6px;
       cursor: pointer;
     }
-
     .form-section button:hover {
       background: #457b9d;
     }
-
     .recipe {
       max-width: 700px;
       margin: 2rem auto;
@@ -45,17 +43,14 @@
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
       text-align: center;
     }
-
     .recipe img {
       max-width: 100%;
       border-radius: 10px;
     }
-
     .recipe h3 {
       margin-top: 1rem;
       font-size: 1.5rem;
     }
-
     .recipe a {
       display: inline-block;
       margin-top: 0.5rem;
@@ -63,7 +58,6 @@
       font-weight: bold;
       text-decoration: none;
     }
-
     .recipe a:hover {
       text-decoration: underline;
     }
@@ -86,36 +80,7 @@
 
   <div id="resultatRecette"></div>
 
-  <script>
-    function chercherRecette() {
-      const ingr = document.getElementById("ingredient").value.trim();
-      const result = document.getElementById("resultatRecette");
-      result.innerHTML = "⏳ Recherche en cours...";
-      if (!ingr) {
-        result.innerHTML = "❌ Entrez un ingrédient valide.";
-        return;
-      }
-
-      fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingr}`)
-        .then(res => res.json())
-        .then(data => {
-          if (data.meals) {
-            const meal = data.meals[Math.floor(Math.random() * data.meals.length)];
-            result.innerHTML = `
-              <div class="recipe">
-                <img src="${meal.strMealThumb}" alt="plat" />
-                <h3>${meal.strMeal}</h3>
-                <a href="https://www.themealdb.com/meal.php?c=${meal.idMeal}" target="_blank">Voir la recette complète</a>
-              </div>
-            `;
-          } else {
-            result.innerHTML = "😢 Aucune recette trouvée pour cet ingrédient.";
-          }
-        })
-        .catch(() => {
-          result.innerHTML = "⚠️ Erreur lors de la recherche.";
-        });
-    }
-  </script>
+  <!-- JavaScript -->
+  <script src="js/recette.js"></script>
 </body>
 </html>
