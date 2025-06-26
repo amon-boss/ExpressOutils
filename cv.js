@@ -1,80 +1,36 @@
-body {
-  margin: 0;
-  font-family: 'Rubik', sans-serif;
-  background-color: #f9f9f9;
-  color: #333;
+function genererCV() {
+  const nom = document.getElementById('nom').value;
+  const poste = document.getElementById('poste').value;
+  const desc = document.getElementById('description').value;
+  const exp = document.getElementById('experiences').value;
+  const form = document.getElementById('formations').value;
+  const comp = document.getElementById('competences').value;
+  const lang = document.getElementById('langues').value;
+
+  const html = `
+    <div id="cv">
+      <h1>${nom}</h1>
+      <h3>${poste}</h3>
+      <h2>🗣️ À propos</h2>
+      <p>${desc}</p>
+      <h2>💼 Expériences</h2>
+      <p>${exp.replace(/\n/g, "<br>")}</p>
+      <h2>🎓 Formations</h2>
+      <p>${form.replace(/\n/g, "<br>")}</p>
+      <h2>🛠️ Compétences</h2>
+      <p>${comp}</p>
+      <h2>🌍 Langues</h2>
+      <p>${lang}</p>
+    </div>
+  `;
+  document.getElementById("result").innerHTML = html;
 }
 
-header {
-  background: #1d3557;
-  color: white;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+function telechargerPDF() {
+  const element = document.getElementById("cv");
+  if (!element) {
+    alert("Génère d'abord le CV avant de télécharger.");
+    return;
+  }
+  html2pdf().from(element).save("MonCV.pdf");
 }
-
-.logo span {
-  font-weight: 600;
-  font-size: 1.3rem;
-}
-
-nav a {
-  color: white;
-  margin-left: 1.5rem;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.hero {
-  text-align: center;
-  padding: 4rem 1rem;
-  background: linear-gradient(to right, #a8dadc, #f1faee);
-}
-
-.hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.cta {
-  margin-top: 2rem;
-}
-
-.btn {
-  text-decoration: none;
-  background: #457b9d;
-  color: white;
-  padding: 1rem 2rem;
-  margin: 0.5rem;
-  border-radius: 8px;
-  display: inline-block;
-  transition: background 0.3s;
-}
-
-.btn:hover {
-  background: #1d3557;
-}
-
-footer {
-  background: #1d3557;
-  color: white;
-  padding: 1.5rem 2rem;
-  text-align: center;
-}
-
-footer a {
-  color: #f1faee;
-  text-decoration: none;
-  margin: 0 0.5rem;
-}
-
-footer .socials {
-  margin-top: 1rem;
-}
-
-footer .socials img {
-  width: 24px;
-  margin: 0 0.3rem;
-  vertical-align: middle;
-    }
