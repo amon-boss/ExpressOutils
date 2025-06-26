@@ -1,80 +1,63 @@
 body {
   margin: 0;
   font-family: 'Rubik', sans-serif;
-  background-color: #f9f9f9;
+  background: linear-gradient(to bottom right, #3a86ff, #ff6ec4);
   color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
-  background: #1d3557;
-  color: white;
-  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-weight: bold;
+  flex-wrap: wrap;
 }
 
-.logo span {
-  font-weight: 600;
-  font-size: 1.3rem;
+header .logo {
+  font-size: 2rem;
+  font-family: 'Pacifico', cursive;
+  color: #1d3557;
 }
 
 nav a {
-  color: white;
-  margin-left: 1.5rem;
+  margin: 0 1rem;
   text-decoration: none;
-  font-weight: 500;
+  color: #1d3557;
+  font-weight: bold;
 }
 
-.hero {
-  text-align: center;
-  padding: 4rem 1rem;
-  background: linear-gradient(to right, #a8dadc, #f1faee);
-}
-
-.hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.cta {
-  margin-top: 2rem;
-}
-
-.btn {
-  text-decoration: none;
-  background: #457b9d;
+button {
+  background-color: #1d3557;
   color: white;
-  padding: 1rem 2rem;
-  margin: 0.5rem;
-  border-radius: 8px;
-  display: inline-block;
-  transition: background 0.3s;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
 
-.btn:hover {
-  background: #1d3557;
+button:hover {
+  background-color: #457b9d;
 }
 
 footer {
-  background: #1d3557;
-  color: white;
-  padding: 1.5rem 2rem;
+  margin-top: auto;
+  background-color: rgba(255,255,255,0.85);
+  padding: 1rem;
   text-align: center;
+  font-size: 0.9rem;
+  border-top: 1px solid #ccc;
 }
 
-footer a {
-  color: #f1faee;
-  text-decoration: none;
-  margin: 0 0.5rem;
-}
-
-footer .socials {
-  margin-top: 1rem;
-}
-
-footer .socials img {
-  width: 24px;
-  margin: 0 0.3rem;
-  vertical-align: middle;
+footer button {
+  margin: 0.3rem;
+  padding: 0.4rem 1rem;
+  font-size: 0.9rem;
+  border-radius: 4px;
 }
